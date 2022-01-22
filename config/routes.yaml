@@ -1,0 +1,31 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+#    methods: GET
+
+#HOME
+home_index:
+  path: /
+  controller: App\Controller\HomeController::index
+  methods: GET
+
+
+#PERSONAJES
+
+crearpersonaje_index:
+  path: /personaje
+  controller: App\Controller\PersonajeController::index
+  methods: [GET,POST]
+
+dashboardpersonajes_index:
+  path: /dashboard
+  controller: App\Controller\DashboardController::index
+  methods: GET
+
+personajeunico_view:
+  path: /view/{id}
+  controller: App\Controller\PersonajeController::view
+  methods: GET
+  requirements:
+    id: '\d+'
+

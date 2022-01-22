@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PersonajeController!{% endblock %}
+
+{% block body %}
+    <div class="container d-flex">
+        <div class="col" width="30%">
+            <img src="{{ asset("media/"~personaje.foto) }}" class="card-img-top" alt="...">
+        </div>
+        <div class="col ms-4">
+            <h1 class="mb-4">{{ personaje.nombre }}</h1>
+            <div class="ps-4">
+
+                <p><strong>Raza: </strong>{{ personaje.raza.nombre}}</p>
+                <p><strong>Clase: </strong>{{ personaje.clase.nombre}}</p>
+                <p><strong>Edad: </strong>{{ personaje.edad}}</p>
+                <p><strong>Historia: </strong>{{ personaje.historia }}</p>
+                <a href="{{ path('dashboardpersonajes_index') }}" class="btn btn-primary">Volver</a>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

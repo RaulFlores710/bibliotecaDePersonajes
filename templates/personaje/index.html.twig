@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PersonajeController!{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-4 offset-4">
+            <h3>Cree su personaje a continuacion</h3>
+
+            {{ form_start(formulario) }}
+            <div class="mb-3">
+                {{ form_row(formulario.foto) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(formulario.Nombre, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(formulario.Nombre,{'attr':{'class':'form-control','placeholder':'Ej: Legolas'}}) }}
+            </div>
+
+            <div class="mb-3">
+                {{ form_label(formulario.edad, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(formulario.edad,{'attr':{'class':'form-control','placeholder':'Ej: 234'}}) }}
+            </div>
+
+            <div class="mb-3">
+                {{ form_label(formulario.raza, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(formulario.raza,{'attr':{'class':'form-select','placeholder':'Ej: Elfo'}}) }}
+            </div>
+
+            <div class="mb-3">
+                {{ form_label(formulario.clase, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(formulario.clase,{'attr':{'class':'form-select','placeholder':'Ej: Arquero'}}) }}
+            </div>
+
+            <div class="mb-3">
+                {{ form_label(formulario.historia, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(formulario.historia,{'attr':{'class':'form-control','placeholder':'Ej: Nacido en los palacios de Rivendel'}}) }}
+            </div>
+            <button type="submit" class="btn btn-primary">Crear personaje</button>
+            {{ form_end(formulario) }}
+            {% for message in app.flashes('exito') %}
+                <div class="alert alert-sucess">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
